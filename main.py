@@ -34,29 +34,6 @@ def special(char_name: str, char_class: str) -> str:
                 f' «Защита {10 + 30}»')
 
 
-def start_training(char_name: str, char_class: str) -> str:
-    if char_class == 'warrior':
-        print(f'{char_name: str}, ты Воитель — отличный боец ближнего боя.')
-    if char_class == 'mage':
-        print(f'{char_name: str}, ты Маг — превосходный укротитель стихий.')
-    if char_class == 'healer':
-        print(f'{char_name: str}, ты Лекарь — чародей, способный исцелять'
-              ' раны.')
-    print('Потренируйся управлять своими навыками.')
-    print('Введи одну из команд: attack — чтобы атаковать противника, defence '
-          '— чтобы блокировать атаку противника или special — чтобы '
-          'использовать свою суперсилу.')
-    print('Если не хочешь тренироваться, введи команду skip.')
-    cmd: str = None
-    while cmd != 'skip':
-        cmd = input('Введи команду: ')
-        if cmd == 'attack':
-            print(attack(char_name, char_class))
-        if cmd == 'defence':
-            print(defence(char_name, char_class))
-        if cmd == 'special':
-            print(special(char_name, char_class))
-    return 'Тренировка окончена.'
 
 
 def choice_char_class() -> str:
@@ -91,6 +68,3 @@ def main() -> str:
     print('Воитель, Маг, Лекарь')
     char_class: str = choice_char_class()
     print(start_training(char_name, char_class))
-
-
-main()
